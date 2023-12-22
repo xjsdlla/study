@@ -1,3 +1,13 @@
+## 背景
+因为是markdown，所以用户可以随便写，像图一这种规规矩矩的标题 做成锚点很简单。
+但是markdown里面 用户可以随便写，就会出现图二这种情况，这种情况下 antdv的anchor的带children嵌套的那种数组就不好实现了
+<img width="221" alt="image" src="https://github.com/xjsdlla/study/assets/54897491/716a5d6c-b4c7-4661-bcfe-9183a5e17ec4">
+
+<img width="217" alt="image" src="https://github.com/xjsdlla/study/assets/54897491/c0d0067a-fd4d-4d86-90d9-827192907692">
+
+### 方案
+因此我们选择 把所有的项放到同一级，然后给不同的标题加class，通过css来做成这种有间距的效果
+
 <script setup>
 import { marked } from 'marked'
 import { onMounted, computed, ref } from 'vue'
@@ -99,3 +109,10 @@ onMounted(() => {
     overflow-y: auto;
 }
 </style>
+
+### 效果
+规规矩矩的标题
+<img width="1693" alt="image" src="https://github.com/xjsdlla/study/assets/54897491/1b75449d-f168-4ea5-a556-68a298dad0a2">
+
+<img width="1690" alt="image" src="https://github.com/xjsdlla/study/assets/54897491/94d0975a-5c64-43a3-8437-6a266242f6f6">
+
