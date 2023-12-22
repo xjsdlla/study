@@ -8,6 +8,8 @@
 ### 方案
 因此我们选择 把所有的项放到同一级，然后给不同的标题加class，通过css来做成这种有间距的效果
 
+
+```javascript
 <script setup>
 import { marked } from 'marked'
 import { onMounted, computed, ref } from 'vue'
@@ -20,6 +22,7 @@ const sidebarMainRef = ref(null);
 const content = computed(() => {
     const renderer = {
         heading(text, level) {
+        	// level代表几级标题 拼接上anchorIndex.value++ 放置id重复
             const idName = level + '_' + anchorIndex.value++
             const className = 'level' + level
             anchorLinkList.value.push({
@@ -109,6 +112,8 @@ onMounted(() => {
     overflow-y: auto;
 }
 </style>
+```
+
 
 ### 效果
 规规矩矩的标题
